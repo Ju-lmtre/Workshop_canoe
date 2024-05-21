@@ -1,0 +1,56 @@
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="jquery"></script>
+<link rel="stylesheet" href="Style.css">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+</style>
+<script>
+  $(function () {
+    var socket = io();
+    $('#spawn').submit(function(){
+		console.log('{pseudo:'+$('#pseudo').val()+'}');
+		var msg =  '{"pseudo":"'+$('#pseudo').val()+'"}';
+      socket.emit('spawn',JSON.parse(msg));
+      return false;
+    });
+	
+	$('#input1').submit(function(){
+		console.log("input A pressed");
+		var msg =  '{"pseudo":"'+$('#pseudo').val()+'"}';
+		socket.emit('input1', JSON.parse(msg));
+		return false;
+	});
+		
+	$('#input2').submit(function(){
+		console.log("input B pressed");
+		var msg =  '{"pseudo":"'+$('#pseudo').val()+'"}';
+		socket.emit('input2', JSON.parse(msg));
+		return false;
+	});
+	
+    socket.on('chat', function(data){
+      $('#messages').append($('<li>').text("user#" + data.id + ": " + data.msg));
+    });
+  });
+</script>
+<body>
+
+  <p>En attente du début de la partie, choisi ton canoë !</p>
+  <img src="Canoe.png" alt="image_canoe">
+
+<form action="" id="spawn">
+  <input type="text" id="pseudo" class="hidden"><br>
+  <input type="submit" value="Commencer la partie !" class="spawn"/>
+  <a href="Pagaie" class="spawn"></a>
+</form>
+
+<form action="" id="input1" class="hidden">
+  <input type="submit" value="Dash"/>
+</form>
+
+<form action="" id="input2" class="hidden">
+  <input type="submit" value="Reverse"/>
+</form>
+
+</body>
