@@ -5,8 +5,9 @@
   <!-- <link rel="stylesheet" href="Style.css"> -->
 </head>
 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+<style>  
+       @import url("https://use.typekit.net/ngc1sff.css");
+
 
   body{
     background-color: #C7ACFF;
@@ -18,18 +19,28 @@
     width: 100vw;
     height: 100vh;
     overflow: hidden;
+  
+
 }
 
 p{
     /* align-self: stretch; */
-    color: #000;
+    color: #5C1558;
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 400;
+    font-size: 2rem;
+    font-weight: 700;
     line-height: normal;
-    width: 80%;
+    font-family: "new-order", sans-serif;
+    font-style: normal;
+    text-shadow : -4px -4px 0 white,
+                  4px -4px 0 white,
+                  -4px  4px 0 white,
+                  4px  4px 0 white,
+                  -4px  0   0 white,
+                  4px  0   0 white,
+                  0   -4px 0 white,
+                  0    4px 0 white;
+  
 }
 
 /* .spawn{
@@ -63,6 +74,10 @@ p{
   background-color: white;
   border: none;
   font-size: 2.5rem;
+  font-family: "new-order", sans-serif;
+  font-weight: 600;
+  color : #5C1558 ;
+  
 }
 
 .hidden{
@@ -112,7 +127,7 @@ p{
 <body>
 
   <p>En attente du début de la partie, choisi ton canoë !</p>
-  <img src="Canoe.png" alt="image_canoe" style="height: 60vh;">
+  <img src="canoe!.svg" alt="image_canoe" style="height: 60vh;">
 
 <!-- <form action="" id="spawn">
   <input type="text" id="pseudo" class="hidden"><br>
@@ -120,7 +135,7 @@ p{
   <a href="Pagaie" class="spawn"></a>
 </form> -->
 
-  <button id="btn-start">Commencer la partie</button>
+  <button id="btn-start"> C'est parti ! </button>
 
 <form action="" id="input1" class="hidden">
   <input type="submit" value="Dash"/>
