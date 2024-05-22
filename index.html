@@ -1,9 +1,81 @@
 
-<script src="/socket.io/socket.io.js"></script>
-<script src="jquery"></script>
-<link rel="stylesheet" href="Style.css">
+<head>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <!-- <link rel="stylesheet" href="Style.css"> -->
+</head>
+
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+  body{
+    background-color: #C7ACFF;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+p{
+    /* align-self: stretch; */
+    color: #000;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    width: 80%;
+}
+
+/* .spawn{
+    display: flex;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    align-self: stretch;
+
+    border-radius: 2rem;
+    border-style: none;
+    background: #FFF;
+
+    color: #000;
+
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+} */
+
+#btn-start{
+  outline: none;
+  border-radius: 70px;
+  width: 60%;
+  height: 140px;
+  display: block;
+  background-color: white;
+  border: none;
+  font-size: 2.5rem;
+}
+
+.hidden{
+    display: none;
+    
+}
+
+@media screen and (max-width: 992px) {
+  p{
+      font-size: 3.5rem;
+  }
+}
+
 </style>
 <script>
   $(function () {
@@ -33,17 +105,22 @@
       $('#messages').append($('<li>').text("user#" + data.id + ": " + data.msg));
     });
   });
+
+  
 </script>
+
 <body>
 
   <p>En attente du début de la partie, choisi ton canoë !</p>
-  <img src="Canoe.png" alt="image_canoe">
+  <img src="Canoe.png" alt="image_canoe" style="height: 60vh;">
 
-<form action="" id="spawn">
+<!-- <form action="" id="spawn">
   <input type="text" id="pseudo" class="hidden"><br>
-  <a href="Pagaie" class="spawn"></a>
   <input type="submit" value="Commencer la partie !" class="spawn"/>
-</form>
+  <a href="Pagaie" class="spawn"></a>
+</form> -->
+
+  <button id="btn-start">Commencer la partie</button>
 
 <form action="" id="input1" class="hidden">
   <input type="submit" value="Dash"/>
@@ -54,3 +131,11 @@
 </form>
 
 </body>
+
+<script>
+  $("#btn-start").click(function(){
+    // alert("coucou");
+    window.location.href = "pagaie.html";
+  })
+</script>
+
