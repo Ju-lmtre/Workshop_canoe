@@ -119,4 +119,22 @@
     </section>
 
 </body>
+
+<script>
+
+    var baseUrl = (window.location).href;
+    var pseudoParam = baseUrl.substring(baseUrl.lastIndexOf('=') + 1);
+    // alert(pseudoParam);
+    var socket = io();
+
+    $("#Gauche").click(function(){
+      socket.emit('input1',pseudoParam);
+    })
+
+    $("#Droite").click(function(){
+      socket.emit('input2',pseudoParam);
+    })
+  
+</script>
+
 </html>
