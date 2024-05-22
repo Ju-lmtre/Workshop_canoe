@@ -1,11 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagaie</title>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+    body{
+        position: relative;
+        background-color: aqua;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 3rem;
+        margin: 0px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        height: 100vh;
+        width: 100vw;
+    }
+
+    .bg-gauche, .bg-droit {
+        flex: 1;
+        height: 100vh;
+    }
+
+    .bg-gauche{
+        background-color: #FF9D9D;
+    }
+
+    .bg-droit{
+        background-color: #A6D9FF;
+    }
+
+    .buttons{
+        position: absolute;
+
+        display: flex;
+        flex-direction: row;
+        gap: 10vw;
+
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn-gauche, .btn-droit{
+        border-style: none;
+        border-radius: 100rem;
+
+        min-width: 40vw;
+        min-height: 40vw;
+        width: 10vw; 
+        height: 10vw;
+
+        font-size: 8vw; 
+        font-weight: 700;
+        color: #FFFF;
+    }
+
+    .btn-gauche{
+        background: #F00;
+    }
+
+    .btn-droit{
+        background: #0094FF;
+    }
+
+</style>
+
 <body>
-    <h1>COUCOU</h1>
+
+    <section class="container">
+        <article class="bg-gauche"></article>
+        <article class="bg-droit"></article>
+    </section>
+
+    <section class="buttons">
+        <button id="Gauche" class="btn-gauche">Gauche</button>
+        <button id="Droite" class="btn-droit">Droite</button>
+    </section>
+
 </body>
 </html>
