@@ -14,13 +14,16 @@
 
     body{
         position: relative;
-        background-color: aqua;
+        background-color: #B897FF;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 3rem;
         margin: 0px;   
+
+        user-zoom: none;
+        user-select: none;
     }
 
     .container {
@@ -69,17 +72,23 @@
     }
 
     .btn-gauche{
+        display: flex;
         background: #977DCF;
         border: 5px solid #FFFFFF;
         font-family: "pain-de-mie", sans-serif;
         letter-spacing: 2.5px;
+        align-items: center;
+        justify-content: center;
     }
 
     .btn-droit{
+        display: flex;
         background: #708454;
         border: 5px solid #FFFFFF;
         font-family: "pain-de-mie", sans-serif;
         letter-spacing: 2.5px;
+        align-items: center;
+        justify-content: center;
     }
 
     .btn-gauche:active, .btn-droit:active {
@@ -90,19 +99,18 @@
 
     .nenuphar{
         position: absolute;
-        width: 40vw;
-        height: 40vw;
-        top: 10vw;
+        width: 30vw;
+        height: 30vw;
+        top: 30vw;
         left: 5vw;
     }
 
     .poisson{
         position: absolute;
-        width: 40vw;
-        height: 40vw;
-        bottom: 15vw;
-        left: 60vw;
-        
+        width: 30vw;
+        height: 30vw;
+        bottom: 35vw;
+        left: 67.5vw; 
     }
 
 </style>
