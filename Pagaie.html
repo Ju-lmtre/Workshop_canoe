@@ -165,7 +165,6 @@
 <script>
     var baseUrl = (window.location).href;
     var pseudoParam = baseUrl.substring(baseUrl.lastIndexOf('=') + 1);
-    // alert(pseudoParam);
     var socket = io();
 
     $("#Gauche").click(function(){
@@ -185,7 +184,7 @@
             const button = $(this);
             setTimeout(function () {
                 button.removeClass("active");
-            }, 1000); // Délai de 1 seconde avant de revenir à l'état initial
+            }, 1000); 
         });
 
         $("#Droite").on("touchstart", function () {
@@ -196,7 +195,7 @@
             const button = $(this);
             setTimeout(function () {
                 button.removeClass("active");
-            }, 1000); // Délai de 1 seconde avant de revenir à l'état initial
+            }, 1000); 
         });
     });
 </script>

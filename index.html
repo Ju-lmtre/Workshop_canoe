@@ -2,7 +2,6 @@
 <head>
   <script src="/socket.io/socket.io.js"></script>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-  <!-- <link rel="stylesheet" href="Style.css"> -->
 </head>
 
 <style>  
@@ -60,27 +59,6 @@ p{
   
 }
 
-/* .spawn{
-    display: flex;
-    padding: 1rem;
-    justify-content: center;
-    align-items: center;
-    gap: 0.625rem;
-    align-self: stretch;
-
-    border-radius: 2rem;
-    border-style: none;
-    background: #FFF;
-
-    color: #000;
-
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.25rem;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-} */
 
 #btn-start{
   outline: none;
@@ -108,37 +86,6 @@ p{
 }
 
 </style>
-<!-- <script>
-  $(function () {
-    var socket = io();
-    $('#spawn').submit(function(){
-		console.log('{pseudo:'+$('#pseudo').val()+'}');
-		var msg =  '{"pseudo":"'+$('#pseudo').val()+'"}';
-      socket.emit('spawn',JSON.parse(msg));
-      return false;
-    });
-	
-	$('#input1').submit(function(){
-		console.log("input A pressed");
-		var msg =  '{"pseudo":"'+$('#pseudo').val()+'"}';
-		socket.emit('input1', JSON.parse(msg));
-		return false;
-	});
-		
-	$('#input2').submit(function(){
-		console.log("input B pressed");
-		var msg =  '{"pseudo":"'+$('#pseudo').val()+'"}';
-		socket.emit('input2', JSON.parse(msg));
-		return false;
-	});
-	
-    socket.on('chat', function(data){
-      $('#messages').append($('<li>').text("user#" + data.id + ": " + data.msg));
-    });
-  });
-
-  
-</script> -->
 
 <body>
 
@@ -233,21 +180,8 @@ p{
     <input type="text" id="pseudo" class="pseudo"/>
   </section>
 
-<!-- <form action="" id="spawn">
-  <input type="text" id="pseudo" class="hidden"><br>
-  <input type="submit" value="Commencer la partie !" class="spawn"/>
-  <a href="Pagaie" class="spawn"></a>
-</form> -->
 
   <button id="btn-start"> C'est parti ! </button>
-
-<!-- <form action="" id="input1" class="hidden">
-  <input type="submit" value="Dash"/>
-</form>
-
-<form action="" id="input2" class="hidden">
-  <input type="submit" value="Reverse"/>
-</form> -->
 
 
 </body>
@@ -257,7 +191,7 @@ p{
 
     $("#btn-start").click(function(){
       var pseudo = $('#pseudo').val();
-      // alert(pseudo);
+      
       if(!pseudo)
       {
         alert("Veuillez rentrer un pseudo marin d'eau douce !");
