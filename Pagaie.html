@@ -24,6 +24,8 @@
 
         user-zoom: none;
         user-select: none;
+
+        font-weight: 0;
     }
 
     .container {
@@ -109,13 +111,30 @@
         position: absolute;
         width: 30vw;
         height: 30vw;
-        bottom: 35vw;
+        bottom: 30vw;
         left: 67.5vw; 
     }
+
+    .chrono{
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        font-family: "pain-de-mie", sans-serif;
+        font-size: 2rem;
+        color: #FFF;
+        background: #5a155751;
+        padding: 10px 20px;
+        border-radius: 10px;
+    }   
+
+    
 
 </style>
 
 <body>
+
+    <article id="chrono" class="chrono">00:00:00</article>
 
     <section class="container">
         <article class="bg-gauche"></article>
@@ -207,5 +226,30 @@
         });
     });
 </script>
+
+<script>
+    window.onload = function() {
+        startChrono();
+    };
+
+    function startChrono() {
+        let startTime = Date.now();
+        let chronoDisplay = document.getElementById('chrono');
+
+        function updateChrono() {
+            let elapsedTime = Date.now() - startTime;
+            let hours = Math.floor(elapsedTime / (1000 * 60 * 60));
+            let minutes = Math.floor((elapsedTime % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((elapsedTime % (1000 * 60)) / 1000);
+            chronoDisplay.textContent = 
+                (hours < 10 ? "0" : "") + hours + ":" + 
+                (minutes < 10 ? "0" : "") + minutes + ":" + 
+                (seconds < 10 ? "0" : "") + seconds;
+        }
+
+        setInterval(updateChrono, 1000);
+    }
+</script>
+
 
 </html>

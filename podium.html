@@ -17,7 +17,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-gap: 4rem;
+gap: 2rem;
 width: 96vw;
 height: 75vh;
 overflow: hidden;
@@ -52,6 +52,19 @@ h1 {
     
 }
 
+.winingcanoe{
+  background-color: rgb(244, 244, 244);
+
+    border: 5px solid #5C1558; 
+    width: 80vw;
+    height: 6vh;
+    font-size: 4.5rem;
+    border-radius: 50px;
+    padding: 5vw;
+
+    color: #5C1558;
+    font-size: 3rem;
+}
 
 p{
     color: #5C1558;
@@ -348,6 +361,13 @@ p{
         </defs>
       </svg>
   <h1>Classement : </h1>
+
+  <input type="text" id="winingcanoe" readonly class="winingcanoe">
+    <script>
+        function ReceiveWinnerID(winnerID) {
+            document.getElementById("winingcanoe").value = winnerID;
+        }
+    </script>
 
    
 </body>
