@@ -27,14 +27,20 @@
 
   .pseudo{
     background-color: rgb(244, 244, 244);
-    border: 5px solid #FFFFFF;
 
-    width: 100vw;
-    height: 10vh;
+    border: 5px solid #5C1558; 
+    width: 80vw;
+    height: 7.5vh;
     font-size: 4.5rem;
     border-radius: 50px;
-    border-style: none;
     padding: 5vw;
+  }
+
+  .gap_pseudo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
 p{
@@ -50,6 +56,7 @@ p{
                   4px  0   0 white,
                   0   -4px 0 white,
                   0    4px 0 white;
+    margin-bottom: 1.5vh;
   
 }
 
@@ -79,7 +86,7 @@ p{
   outline: none;
   border-radius: 70px;
   width: 60%;
-  height: 140px;
+  height: 10%;
   display: block;
   background-color: white;
   border: none;
@@ -221,7 +228,10 @@ p{
     </defs>
   </svg>
 
-  <input type="text" id="pseudo" class="pseudo"/>
+  <section class="gap_pseudo">
+    <p>Entre ton pseudo ici :</p>
+    <input type="text" id="pseudo" class="pseudo"/>
+  </section>
 
 <!-- <form action="" id="spawn">
   <input type="text" id="pseudo" class="hidden"><br>
